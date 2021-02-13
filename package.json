@@ -1,0 +1,33 @@
+{
+  "name": "twitter-api-client-example",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prestart": "rimraf dist && yarn build",
+    "serve": "node dist/index.js",
+    "start": "yarn serve",
+    "watch-node": "nodemon dist/index.js",
+    "watch-ts": "tsc -w",
+    "watch": "concurrently -k -p \"[{name}]\" \"yarn watch-ts\" \"yarn watch-node\""
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "twitter-api-client": "^1.3.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.9",
+    "@types/errorhandler": "^1.5.0",
+    "@types/express": "^4.17.11",
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.1.5"
+  }
+}

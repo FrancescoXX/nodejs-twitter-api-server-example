@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  app:
+    image: francescoxx/nodejs-twitter-api-server-example:0.0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+
+    # When you set the same environment variable in multiple files,
+    # here’s the priority used by Compose to choose which value to use:
+
+    # Compose file
+    # Shell environment variables
+    # Environment file
+    # Dockerfile
+    # Variable is not defined
+    environment:
+      - API_KEY=${API_KEY}
+      - API_SECRET=${API_SECRET}
+      - ACCESS_TOKEN=${ACCESS_TOKEN}
+      - ACCESS_TOKEN_SECRET=${ACCESS_TOKEN_SECRET}
